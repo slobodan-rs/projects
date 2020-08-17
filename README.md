@@ -1,2 +1,2 @@
 # projects
-HTML/CSS/JS/REACT projects
+HTML/CSS/JS/REACT
