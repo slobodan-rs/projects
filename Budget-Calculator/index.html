@@ -15,9 +15,18 @@
         <article>
             <section class="current-status">
                 <p>Dostupan budžet u Avgustu 2020:</p>
-                <div class ="subtraction"></div>
-                <div class="sum-income"></div>
-                <div class="sum-expenses"></div>
+                <div id="subtraction">- 0.00</div>
+                <div id="sum-income">
+                    <p>Prihodi</p>
+                    <p class="right">+ 0.00</p>
+                </div>
+                <div>
+                    <div id="sum-expenses">
+                        <p>Rashodi</p> 
+                        <p class="right">- 0.00</p>
+                        <p id="percent">--</p>
+                    </div>
+                </div>
             </section>
             <section class="input">
                     <select name="in-out" id="select-feild" required>

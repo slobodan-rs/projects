@@ -41,7 +41,7 @@ export const budgetPrint = () => {
         expensesInput.className = 'amount'
         expensesInput.innerHTML = `<span style="color: #212121">${inputDiscription.value}</span>
         <span style="float: right"> - ${(Math.round(inputAmount.value * 100) / 100).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} 
-        <span id="percent">${Math.round(percentage * 100) / 100}%</span></span>`
+        <span id="percent-block">${Math.round(percentage * 100) / 100}%</span></span>`
  
         const deleteButtonExpenses = document.createElement('button')
         deleteButtonExpenses.textContent = 'X'
