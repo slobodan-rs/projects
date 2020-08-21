@@ -1,0 +1,133 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.current-status {
+    height: 380px;
+    background-color: #A9AABC;
+    text-align: center;
+}
+.current-status p {
+    margin:0;
+    padding: 20px 0;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+}
+.subtraction p{
+    height: 100px;
+    font-size: 70px;
+    color: white;
+}
+#sum-income {
+    height: 10px;
+    text-align: left;
+    padding: 20px 100px 30px 30px;
+    margin: 10px 35%;
+    background-color: #2AB9B7;
+}
+#sum-expenses {
+    height: 10px;
+    text-align: left;
+    padding: 20px 100px 30px 30px;
+    margin:10px 35%;
+    background-color: #FF4F4B;
+}
+#percent-block{
+    position: relative;
+    width: 70px;
+    top: -57px;
+    left: 59.7vw;
+    background-color: #F57B66;
+    padding: 5px;
+    border-radius: 5px;
+    margin-left: 5px;
+    color:white;
+}
+#percent {
+    background-color: #F57B66;
+    padding: 5px;
+    border-radius: 5px;
+    margin-left: 5px;
+    color:white;
+}
+.input {
+    text-align: center;
+    background-color: #F7F7F7;   
+}
+input[type=text], select{
+    padding: 20px;
+    margin: 10px;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+    background-color: white;
+    border-radius: 5px;
+    border: 0px;
+}
+.btn{
+    width: 30px;
+    padding: 10px;
+    border: none;
+    outline:none;
+    border-radius: 50%;
+}
+.icon {
+    position: relative;
+    top: 15px;
+    left: -40px;
+    pointer-events: none;
+    color: black
+}
+#icon-green {
+    position: relative;
+    top: 15px;
+    left: -40px;
+    pointer-events: none;
+    color: #2AB9B7;
+}
+#icon-red {
+    position: relative;
+    top: 15px;
+    left: -40px;
+    pointer-events: none;
+    color: #FF4F4B;
+}
+.budget {
+    display: flex;
+    padding:100px;
+}
+.income {
+    flex: 1;
+    font-size: 22px;
+    color: #2AB9B7;
+    margin: 0 100px;
+}
+.income p:first-child {
+    border-bottom: 1px solid rgb(195, 195, 195);
+    padding-bottom: 10px;
+}
+.expenses {
+    flex: 1;
+    font-size: 22px;
+    color: #FF4F4B;
+    margin: 0 100px;
+}
+.expenses p:first-child {
+    border-bottom: 1px solid rgb(195, 195, 195);
+    padding-bottom: 10px;
+}
+.amount {
+    border-bottom: 1px solid rgb(195, 195, 195);
+    font-size: 20px;
+    padding: 20px 0;
+}
+.delete-button {
+    display:none;
+    float: left;
+    margin-right: 10px;
+}
+.delete-button-show {
+    float: left;
+    margin-right: 10px;
+}
+
