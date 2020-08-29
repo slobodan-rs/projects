@@ -1,11 +1,12 @@
 # projects
 HTML/CSS/JS/REACT
----------------------------------------
+
+
 
 I. Budget Calculator
-    - Javascript DOM
-
-    Dependencies
-        - NPM
-
----------------------------------------
+    -JavaScript DOM
+    
+   Dependencies :
+    - NPM
+    
+/*---------------------------------------*/
