@@ -1,0 +1,124 @@
+body{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background-image: url('https://wallpaperplay.com/walls/full/e/4/5/54073.jpg');
+}
+.search-div{
+    text-align: center;
+    height: 100px;
+    margin: 0px 70px;
+    background-color: rgba(255,255,255,0.5);
+}
+.comapny-name {
+    text-align: center;
+    font-size: 5rem;
+    padding: 30px 0;
+    color: rgba(255,255,255,0.5);
+}
+.payload-0,.payload-1,.payload-2,.payload-3,.payload-4 {
+    padding-right: 20px;
+    padding-left: 5px;
+}
+.payload-type {
+    padding: 10px
+}
+.launch-list{
+    margin-top: 50px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.launch{
+    width: 19%;
+    height: 330px;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 50px;
+    transition: transform .2s;
+    background-color: rgba(255,255,255,0.5);
+}
+.launch:hover{
+    transform: scale(1.05);
+}
+.inner-div-0{
+    height: 190px;
+    width: 100%;
+ 
+}
+.inner-div-0 img{
+    height: 100%;
+    /* width: 100%; */
+}
+.inner-div-1{
+    height: 45px;
+    width: 100%;
+    border-bottom: 0.5px solid #999;
+}
+.inner-div-2{
+    height: 45px;
+    width: 100%;
+}
+.inner-div-3{
+    height: 45px;
+    width: 100%;
+}
+ 
+span{
+    display: inline-block;
+    margin-top: 12.3px;
+    margin-right: 5px;
+}
+ 
+#rocket {
+    z-index: 1000;
+    position: absolute;
+    visibility: hidden;
+    transform: rotate(57deg);
+    left:35%;
+    animation: fly 3s .5s ease-in;
+}
+.select{
+    margin-top: 25px;
+    padding: 10px;
+    border-radius: .25em;
+    width: 20em;
+    height: 3em;
+    outline: 0;
+    box-shadow: none;
+    border: 0 !important;
+    background: #999;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    background-image:
+    linear-gradient(45deg, transparent 50%, black 50%),
+    linear-gradient(135deg, black 50%, transparent 50%),
+    linear-gradient(to right, black, black);
+    background-position:
+    calc(100% - 20px) calc(1em + 2px),
+    calc(100% - 15px) calc(1em + 2px),
+    calc(100% - 2.5em) 0.5em;
+    background-size:
+    5px 5px,
+    5px 5px,
+    1px 1.5em;
+    background-repeat: no-repeat;
+    transition-property: width;
+  transition-duration: 2s;
+}
+@keyframes fly {
+0% {
+    visibility: visible;
+    transform: rotate(0deg);
+    bottom: -600px; 
+    left: -600px; 
+}
+100% {
+    transform: rotate(300deg);
+    left:100%;
+    bottom: 100%;
+}
+}
