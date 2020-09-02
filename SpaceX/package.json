@@ -1,11 +1,12 @@
 {
   "name": "javascript",
   "version": "1.0.0",
-  "description": "Празан костур пројекта",
+  "description": "SpaceX",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server",
-    "build": "webpack"
+    "build": "webpack",
+    "stop" : "killall -9 node"
   },
   "author": "SVEA , ITBootcamp",
   "license": "MIT",

@@ -29,118 +29,119 @@ export const PayloadCheckbox = (arr) => {
     const payload3 = document.querySelector('#payload-3')
     const payload4 = document.querySelector('#payload-4')
         
-    let payloadArr = []
+    let payloadArr = arr
     let payloadNewArr = []
+
     payload0.addEventListener('change', (e) => {
-        arr.forEach(el => {
-            if(e.target.checked && el.rocket.second_stage.payloads[0].payload_type == payload0.value){
-                
-                    if(payloadArr.includes(!el.rocket.second_stage.payloads[0].payload_type == payload0.value)){
-                        return payloadArr
-                    }
-                    else{
-                        launchList.innerHTML = ``
-                        payloadArr.push(el)
-                        LaunchList(payloadArr)
-                    }
-                
-            }
-            else {
-                payloadNewArr = new Set(payloadArr.filter(elements => elements.rocket.second_stage.payloads[0].payload_type != payload0.value))
-                launchList.innerHTML = ``
-                LaunchList(payloadNewArr)
-            }  
-        }); 
-        console.log(payloadNewArr)
+        if(e.target.checked){      
+            launchList.innerHTML = ``
+            payloadNewArr.push(payloadArr.filter(payload => payload.rocket.second_stage.payloads[0].payload_type.includes(payload0.value)))
+            payloadNewArr.forEach(el =>  {
+                LaunchList(el)
+            })
+        }
+        else {
+            launchList.innerHTML = ``
+            payloadNewArr.forEach(el => {
+                if(el[0].rocket.second_stage.payloads[0].payload_type.includes(payload0.value)){
+                    let index = payloadNewArr.indexOf(el)
+                    payloadNewArr.splice(index,1)
+
+                }
+            })
+            payloadNewArr.forEach(el => {
+                LaunchList(el)
+            })
+        }
     })
     payload1.addEventListener('change', (e) => {
-        arr.filter(el => {
-            if(e.target.checked){
-                if(el.rocket.second_stage.payloads[0].payload_type == payload1.value){
-                    if(payloadArr.includes(!el.rocket.second_stage.payloads[0].payload_type == payload1.value)){
-                        return payloadArr
-                    }
-                    else{
-                        launchList.innerHTML = ``
-                        payloadArr.push(el)
-                        LaunchList(payloadArr)
-                    }
+        if(e.target.checked){      
+            launchList.innerHTML = ``
+            payloadNewArr.push(payloadArr.filter(payload => payload.rocket.second_stage.payloads[0].payload_type.includes(payload1.value)))
+            payloadNewArr.forEach(el =>  {
+                LaunchList(el)
+            })
+        }
+        else {
+            launchList.innerHTML = ``
+            payloadNewArr.forEach(el => {
+                if(el[0].rocket.second_stage.payloads[0].payload_type.includes(payload1.value)){
+                    let index = payloadNewArr.indexOf(el)
+                    payloadNewArr.splice(index,1)
+
                 }
-            }
-            else {
-                payloadNewArr = new Set(payloadArr.filter(elements => elements.rocket.second_stage.payloads[0].payload_type != payload1.value))
-                launchList.innerHTML = ``
-                LaunchList(payloadNewArr)
-            }  
-        })
-        console.log(payloadNewArr)
+            })
+            payloadNewArr.forEach(el => {
+                LaunchList(el)
+            })
+        }
     })
     payload2.addEventListener('change', (e) => {
-        arr.filter(el => {
-            if(e.target.checked){
-                if(el.rocket.second_stage.payloads[0].payload_type == payload2.value){
-                    if(payloadArr.includes(el.rocket.second_stage.payloads[0].payload_type == payload2.value)){
-                        return payloadArr
-                    }
-                    else{
-                        launchList.innerHTML = ``
-                        payloadArr.push(el)
-                        LaunchList(payloadArr)
-                    }
+        if(e.target.checked){      
+            launchList.innerHTML = ``
+            payloadNewArr.push(payloadArr.filter(payload => payload.rocket.second_stage.payloads[0].payload_type.includes(payload2.value)))
+            payloadNewArr.forEach(el =>  {
+                LaunchList(el)
+            })
+        }
+        else {
+            launchList.innerHTML = ``
+            payloadNewArr.forEach(el => {
+                if(el[0].rocket.second_stage.payloads[0].payload_type.includes(payload2.value)){
+                    let index = payloadNewArr.indexOf(el)
+                    payloadNewArr.splice(index,1)
+
                 }
-            }
-            else {
-                payloadNewArr = new Set(payloadArr.filter(elements => elements.rocket.second_stage.payloads[0].payload_type != payload2.value))
-                launchList.innerHTML = ``
-                LaunchList(payloadNewArr)
-            }  
-        });  
-        console.log(payloadNewArr)
+            })
+            payloadNewArr.forEach(el => {
+                LaunchList(el)
+            })
+        }
     })
     payload3.addEventListener('change', (e) => {
-        arr.filter(el => {
-            if(e.target.checked){
-                if(el.rocket.second_stage.payloads[0].payload_type == payload3.value){
-                    if(payloadArr.includes(el.rocket.second_stage.payloads[0].payload_type == payload3.value)){
-                        return payloadArr
-                    }
-                    else{
-                        launchList.innerHTML = ``
-                        payloadArr.push(el)
-                        LaunchList(payloadArr)
-                    }
+        if(e.target.checked){      
+            launchList.innerHTML = ``
+            payloadNewArr.push(payloadArr.filter(payload => payload.rocket.second_stage.payloads[0].payload_type.includes(payload3.value)))
+            payloadNewArr.forEach(el =>  {
+                LaunchList(el)
+            })
+        }
+        else {
+            launchList.innerHTML = ``
+            payloadNewArr.forEach(el => {
+                if(el[0].rocket.second_stage.payloads[0].payload_type.includes(payload3.value)){
+                    let index = payloadNewArr.indexOf(el)
+                    payloadNewArr.splice(index,1)
+
                 }
-            }
-            else {
-                payloadNewArr = new Set(payloadArr.filter(elements => elements.rocket.second_stage.payloads[0].payload_type != payload3.value))
-                launchList.innerHTML = ``
-                LaunchList(payloadNewArr)
-            }  
-        });  
-        console.log(payloadNewArr)
+            })
+            payloadNewArr.forEach(el => {
+                LaunchList(el)
+            })
+        }
     })
     payload4.addEventListener('change', (e) => {
-        arr.filter(el => {
-            if(e.target.checked){
-                if(el.rocket.second_stage.payloads[0].payload_type == payload4.value){
-                    if(payloadArr.includes(el.rocket.second_stage.payloads[0].payload_type == payload4.value)){
-                        return payloadArr
-                    }
-                    else{
-                        launchList.innerHTML = ``
-                        payloadArr.push(el)
-                        LaunchList(payloadArr)
-                    }
+        if(e.target.checked){      
+            launchList.innerHTML = ``
+            payloadNewArr.push(payloadArr.filter(payload => payload.rocket.second_stage.payloads[0].payload_type.includes(payload4.value)))
+            payloadNewArr.forEach(el =>  {
+                LaunchList(el)
+            })
+        }
+        else {
+            launchList.innerHTML = ``
+            payloadNewArr.forEach(el => {
+                if(el[0].rocket.second_stage.payloads[0].payload_type.includes(payload4.value)){
+                    let index = payloadNewArr.indexOf(el)
+                    payloadNewArr.splice(index,1)
+
                 }
-            }
-            else {
-                payloadNewArr = new Set(payloadArr.filter(elements => elements.rocket.second_stage.payloads[0].payload_type != payload4.value))
-                launchList.innerHTML = ``
-                LaunchList(payloadNewArr)
-                
-            }  
-        }); 
-        console.log(payloadNewArr) 
+            })
+            payloadNewArr.forEach(el => {
+                LaunchList(el)
+            })
+        }
     })
+    return launchList
 
 }

@@ -1,6 +1,6 @@
 import { LaunchList } from './components/LaunchList'
 import { getAllLaunches, getCompanyName } from './services'
-import { Header, searchDiv } from './components/Header'
+import { Header, searchDiv, searchPayload } from './components/Header'
 import { SelectYear } from './components/SelectYear'
 import { PayloadCheckbox } from './components/PayloadCheckbox'
 
@@ -14,8 +14,9 @@ getCompanyName().then(res => {
 })
 
 getAllLaunches().then(res => {
+    searchPayload.append(PayloadCheckbox(res.data))
+    searchDiv.append(SelectYear(res.data))
     app.append(LaunchList(res.data))
-    searchDiv.append(SelectYear(res.data), PayloadCheckbox(res.data))
 })
 
 

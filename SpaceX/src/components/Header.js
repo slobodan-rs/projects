@@ -8,4 +8,11 @@ const Header = (name) => {
 const searchDiv = document.createElement('div')
 searchDiv.className = 'search-div'
 
-export { Header, searchDiv }
+const searchPayload = document.createElement('div')
+const searchPayloadPar = document.createElement('p')
+searchPayloadPar.textContent = 'Search by Payload:'
+
+searchPayload.append(searchPayloadPar)
+searchDiv.append(searchPayload)
+
+export { Header, searchDiv, searchPayload }
