@@ -4,7 +4,7 @@ HTML/CSS/JS/REACT
 #################################
 
 I.  Budget Calculator:
-     -JavaSript DOM
+        -JavaSript DOM
     
     Dependencies:
      -NPM
