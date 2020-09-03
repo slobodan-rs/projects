@@ -1,12 +1,11 @@
 import { LaunchList } from './components/LaunchList'
 import { getAllLaunches, getCompanyName } from './services'
-import { Header, searchDiv, searchPayload } from './components/Header'
-import { SelectYear } from './components/SelectYear'
+import { Header, searchDiv} from './components/Header'
+import { SelectYear, selectDiv } from './components/SelectYear'
 import { PayloadCheckbox } from './components/PayloadCheckbox'
-
+import { InputFilter, inputPar } from './components/InputFilter'
 
 const app = document.querySelector('#app')
-
 
 getCompanyName().then(res => {
     app.append(Header(res.data),searchDiv)
@@ -14,11 +13,7 @@ getCompanyName().then(res => {
 })
 
 getAllLaunches().then(res => {
-    searchPayload.append(PayloadCheckbox(res.data))
-    searchDiv.append(SelectYear(res.data))
+    selectDiv.append(SelectYear(res.data), inputPar, InputFilter(res.data))
+    searchDiv.append(selectDiv, PayloadCheckbox(res.data))
     app.append(LaunchList(res.data))
 })
-
-
-
-

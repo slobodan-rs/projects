@@ -9,6 +9,7 @@ const searchDiv = document.createElement('div')
 searchDiv.className = 'search-div'
 
 const searchPayload = document.createElement('div')
+searchPayload.className = 'search-checkbox'
 const searchPayloadPar = document.createElement('p')
 searchPayloadPar.textContent = 'Search by Payload:'
 

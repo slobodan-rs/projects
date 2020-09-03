@@ -1,4 +1,4 @@
-import { searchDiv } from './Header'
+import { searchPayload } from './Header'
 import { launchList, LaunchList } from './LaunchList'
 
 export const PayloadCheckbox = (arr) => {
@@ -20,7 +20,7 @@ export const PayloadCheckbox = (arr) => {
         
         counter++
         
-        searchDiv.append(payloadType, payloadTypeLabel)
+        searchPayload.append(payloadType, payloadTypeLabel)
     })
 
     const payload0 = document.querySelector('#payload-0')
@@ -46,7 +46,6 @@ export const PayloadCheckbox = (arr) => {
                 if(el[0].rocket.second_stage.payloads[0].payload_type.includes(payload0.value)){
                     let index = payloadNewArr.indexOf(el)
                     payloadNewArr.splice(index,1)
-
                 }
             })
             payloadNewArr.forEach(el => {
@@ -68,7 +67,6 @@ export const PayloadCheckbox = (arr) => {
                 if(el[0].rocket.second_stage.payloads[0].payload_type.includes(payload1.value)){
                     let index = payloadNewArr.indexOf(el)
                     payloadNewArr.splice(index,1)
-
                 }
             })
             payloadNewArr.forEach(el => {
@@ -90,7 +88,6 @@ export const PayloadCheckbox = (arr) => {
                 if(el[0].rocket.second_stage.payloads[0].payload_type.includes(payload2.value)){
                     let index = payloadNewArr.indexOf(el)
                     payloadNewArr.splice(index,1)
-
                 }
             })
             payloadNewArr.forEach(el => {
@@ -112,7 +109,6 @@ export const PayloadCheckbox = (arr) => {
                 if(el[0].rocket.second_stage.payloads[0].payload_type.includes(payload3.value)){
                     let index = payloadNewArr.indexOf(el)
                     payloadNewArr.splice(index,1)
-
                 }
             })
             payloadNewArr.forEach(el => {
@@ -134,7 +130,6 @@ export const PayloadCheckbox = (arr) => {
                 if(el[0].rocket.second_stage.payloads[0].payload_type.includes(payload4.value)){
                     let index = payloadNewArr.indexOf(el)
                     payloadNewArr.splice(index,1)
-
                 }
             })
             payloadNewArr.forEach(el => {

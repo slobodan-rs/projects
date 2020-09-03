@@ -1,6 +1,14 @@
 import { LaunchList, launchList } from './LaunchList'
 
+export const selectDiv = document.createElement('div')
+selectDiv.className = 'search-year'
+
 export const SelectYear = (arr) => {
+
+    const selectPar = document.createElement('p')
+    selectPar.textContent = 'Search by Year:'
+    selectDiv.append(selectPar)
+
     const select = document.createElement('select')
     select.name = 'Years'
     select.className = 'select'

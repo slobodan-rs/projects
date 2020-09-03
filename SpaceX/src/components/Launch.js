@@ -1,9 +1,5 @@
 export const Launch = (launch) => {
-    // launch.launch_year
-    // launch.rocket.rocket_name
-    // launch.links.mission_patch
-    // launch.rocket.payload_type
-   
+
         const launchDiv = document.createElement('div')
         launchDiv.className = 'launch'
     
@@ -18,7 +14,6 @@ export const Launch = (launch) => {
             const rocketName = document.createElement('span')
             rocketName.textContent = launch.rocket.rocket_name
         innerDiv1.append(rocketName)
-
         
         const innerDiv2 = document.createElement('div')
         innerDiv2.className = 'inner-div-2'
