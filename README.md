@@ -3,8 +3,7 @@ HTML/CSS/JS/REACT
 
 #################################
 
-I.  
-
+I.
     Budget Calculator:
      -JavaSript DOM
     
@@ -13,7 +12,8 @@ I.
     
 #################################
 
-II. SpaceX Search:
+II.
+    SpaceX Search:
      -JavaSript DOM
      -NPM
      -AXIOS
