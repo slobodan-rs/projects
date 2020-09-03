@@ -1,20 +1,20 @@
-# projects
+# Projects
 HTML/CSS/JS/REACT
 
 #################################
 
-I. Budget Calculator
-    -JavaScript DOM
+I.  Budget Calculator:
+     -JavaSript DOM
     
-   Dependencies:
-    - NPM
+    Dependencies:
+     -NPM
     
 #################################
 
-II. SpaceX Search
-     -Javascript DOM
-     -Axios
-     -API
+II. SpaceX Search:
+     -JavaSript DOM
+     -NPM
+     -AXIOS
 
     Dependencies:
      -NPM
