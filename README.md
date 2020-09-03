@@ -2,14 +2,14 @@
 HTML/CSS/JS/REACT
 
 --------------------------------
-    Budget Calculator:
+I.   Budget Calculator:
      -JavaSript DOM
     
         Dependencies:
         -NPM
     
 -------------------------------- 
-    SpaceX Search:
+II.  SpaceX Search:
      -JavaSript DOM
      -AXIOS
      -API
