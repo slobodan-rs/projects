@@ -12,7 +12,7 @@ I. Budget Calculator
 #################################
 
 II. SpaceX Search
-     -Javascrip DOM
+     -Javascript DOM
      -Axios
      -API
 
