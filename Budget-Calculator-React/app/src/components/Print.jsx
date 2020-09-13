@@ -31,6 +31,7 @@ const Print = ({ input, setIncome, income, expenses, setExpenses }) => {
         setIsShown(false)
     }
     return (
+
         <div className="budget">
             <div className="income">
                 <p>Income:</p>
@@ -42,6 +43,7 @@ const Print = ({ input, setIncome, income, expenses, setExpenses }) => {
                 {input.map(el => el.budget.includes('expenses') ? <IcomeAndExpenses key={el.id} el={el} handleMouseEnter={handleMouseEnter} handleMouseLeave={handleMouseLeave} handleButton={handleButton} isShown={isShown} percent={percent}/> : null)}
             </div>
         </div>
+        
     )
 }
 export default Print

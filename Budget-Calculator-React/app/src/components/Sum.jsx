@@ -1,6 +1,5 @@
 import React from 'react'
 import { useEffect } from 'react'
-import '../index.css'
 
 
 const Sum = ({ input, income, setIncome, expenses, setExpenses }) => {

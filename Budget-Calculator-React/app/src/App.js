@@ -4,13 +4,10 @@ import Form from './components/Form';
 import Print from './components/Print';
 
 
-
-
 function App() {
   const [input, setInput] = useState([])
   const [income, setIncome] = useState(0)
   const [expenses, setExpenses] = useState(0)
-
 
   return (
     <div className="App">

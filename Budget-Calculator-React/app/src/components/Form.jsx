@@ -8,8 +8,6 @@ const Form = ({input, setInput}) => {
     const [amount, setAmount] = useState('')
     const [budget, setBudget] = useState('')
 
-
-    
     const handlSubmitt = (e) => {
         e.preventDefault()
         if(amount.length > 0 && !isNaN(amount)){
@@ -17,7 +15,6 @@ const Form = ({input, setInput}) => {
         setDiscription('')
         setAmount('')
         setBudget('')
-        
         }
         else{
             console.log('nešto')
@@ -29,17 +26,18 @@ const Form = ({input, setInput}) => {
             
             <form className="form" onSubmit={handlSubmitt}>
                 <select defaultValue={'default'} onChange={(e) => {setBudget(e.target.value)}}>
-                    <option value="default" hidden>-</option>
+                    <option value="default" selected disabled hidden>-</option>
                     <option value="income">Income</option>
                     <option value="expenses">Expenses</option>
                 </select>
                 <input type="text" placeholder="Discription" required value={discription} onChange={(e) => setDiscription(e.target.value)}></input>
                 <input type="text" placeholder="Amount" required value={amount} onChange={(e) => setAmount(e.target.value)}></input>
-                <input type="submit" value="Enter"></input>
+                <input type="submit" value="Enter" className="btn"></input>
             </form>
             
             
         </>
     )
 }
+
 export default Form
