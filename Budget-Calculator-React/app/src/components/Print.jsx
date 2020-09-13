@@ -1,33 +1,45 @@
 import React from 'react'
+import { useEffect } from 'react'
+import { useState } from 'react'
+import IcomeAndExpenses from './IcomeAndExpenses'
 
-const Print = ({ input }) => {
+const Print = ({ input, setIncome, income, expenses, setExpenses }) => {
+    const [isShown, setIsShown] = useState(false)
+    const [findId, setFindId] = useState('')
+    const [percent, setPercent] = useState(0)
+
+    useEffect( () => {
+        setPercent(Math.round((expenses / income) * 100) + '%')
+    },[income, expenses])
 
     const handleButton = () => {
-        input.splice(input.findIndex(el => el.id === el), 1)
-        // input.splice(input.findIndex(el => el.id == expensesInput.id),1)
+        let index = input.findIndex(el => el.id.includes(findId))
+        if(input[index].budget.includes('income')){
+            setIncome(income - input[index].amount)
+        }
+        else {
+            setExpenses(expenses - input[index].amount)
+        }
+        input.splice(index, 1)
+    }
+    
+    const handleMouseEnter = (e) =>{
+        setIsShown(true)
+        setFindId(e.target.id)
+    }
+    const handleMouseLeave = (e) =>{
+        setIsShown(false)
     }
     return (
         <div className="budget">
             <div className="income">
                 <p>Income:</p>
                 {input.map(el =>
-                    el.budget.includes('income') ? <div className="income-div" key={el.id}>
-                        <p>{el.discription}</p>
-                        <p><span id="span-right-income">{el.amount}</span></p>
-                        <button>x</button>
-                    </div>
-                : null)}
-
+                    el.budget.includes('income') ?  <IcomeAndExpenses key={el.id} el={el} handleMouseEnter={handleMouseEnter} handleMouseLeave={handleMouseLeave} handleButton={handleButton} isShown={isShown} income={income} expenses={expenses} /> : null)}
             </div>
             <div className="expenses">
                 <p>Expenses:</p>
-                {input.map(el => el.budget.includes('expenses') ? <div className="income-div" key={el.id}>
-                        <p>{el.discription}</p>
-                        <p><span id="span-right-expenses">{el.amount}</span></p>
-                        <button onClick={handleButton}>x</button>
-                    </div>
-                : null)}
-
+                {input.map(el => el.budget.includes('expenses') ? <IcomeAndExpenses key={el.id} el={el} handleMouseEnter={handleMouseEnter} handleMouseLeave={handleMouseLeave} handleButton={handleButton} isShown={isShown} percent={percent}/> : null)}
             </div>
         </div>
     )

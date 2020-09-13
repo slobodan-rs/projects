@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import { v1 as uuidv1 } from 'uuid'
-import Print from './Print';
+
 
 const Form = ({input, setInput}) => {
     const [discription, setDiscription] = useState('')
@@ -17,6 +17,7 @@ const Form = ({input, setInput}) => {
         setDiscription('')
         setAmount('')
         setBudget('')
+        
         }
         else{
             console.log('nešto')
@@ -25,6 +26,7 @@ const Form = ({input, setInput}) => {
     
     return (
         <>
+            
             <form className="form" onSubmit={handlSubmitt}>
                 <select defaultValue={'default'} onChange={(e) => {setBudget(e.target.value)}}>
                     <option value="default" hidden>-</option>
@@ -35,7 +37,8 @@ const Form = ({input, setInput}) => {
                 <input type="text" placeholder="Amount" required value={amount} onChange={(e) => setAmount(e.target.value)}></input>
                 <input type="submit" value="Enter"></input>
             </form>
-            <Print input={input}/>
+            
+            
         </>
     )
 }

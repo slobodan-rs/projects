@@ -33,14 +33,18 @@ code {
   font-size: 20px;
 }
 #icome{
+  font-size: 22px;
+  color: white;
   text-align: left;
   background-color: red;
-  margin: 0 30%;
+  margin: 0 35%;
   padding: 20px;
 }
 #expenses{
+  font-size: 22px;
+  color: white;
   text-align: left;
-  margin: 10px 30%;
+  margin: 10px 35%;
   padding: 20px;
   background-color: #2AB9B7;
 }
@@ -75,71 +79,18 @@ code {
 .income-div {
   color:black;
 }
+.income-div-hower p {
+  text-decoration: line-through;
+  color:red;
+}
 #span-right-income {
   float: right;
-  position: relative;
-  bottom: 60px;
   color:#2AB9B7;
 }
 #span-right-expenses {
   float: right;
-  position: relative;
-  bottom: 60px;
   color:#FF4F4B;
-  padding-right: 70px;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-.current-status {
-  height: 380px;
-  background-color: #A9AABC;
-  text-align: center;
-}
-.current-status p {
-  margin:0;
-  padding: 20px 0;
-  font-size: 20px;
-  color: rgb(255, 255, 255);
-}
-.subtraction p{
-  height: 100px;
-  font-size: 70px;
-  color: white;
-}
-#sum-income {
-  height: 10px;
-  text-align: left;
-  padding: 20px 100px 30px 30px;
-  margin: 10px 35%;
-  background-color: #2AB9B7;
-}
-#sum-expenses {
-  height: 10px;
-  text-align: left;
-  padding: 20px 100px 30px 30px;
-  margin:10px 35%;
-  background-color: #FF4F4B;
-}
-#percent-block{
-  position: relative;
-  width: 70px;
-  top: -57px;
-  left: 59.7vw;
-  background-color: #F57B66;
-  padding: 5px;
-  border-radius: 5px;
-  margin-left: 5px;
-  color:white;
+  padding-right: 10px;
 }
 #percent {
   background-color: #F57B66;
@@ -148,9 +99,16 @@ code {
   margin-left: 5px;
   color:white;
 }
-.input {
-  text-align: center;
-  background-color: #F7F7F7;   
+#span-income {
+  font-size: 20px;
+  float: right;
+  color: white;
+  margin-right: 70px;
+}
+#span-expenses{
+  font-size: 20px;
+  float: right;
+  color: white;
 }
 input[type=text], select{
   padding: 20px;
@@ -160,47 +118,5 @@ input[type=text], select{
   border-radius: 5px;
   border: 0px;
 }
-.btn{
-  width: 30px;
-  padding: 10px;
-  border: none;
-  outline:none;
-  border-radius: 50%;
-}
-.icon {
-  position: relative;
-  top: 15px;
-  left: -40px;
-  pointer-events: none;
-  color: black
-}
-#icon-green {
-  position: relative;
-  top: 15px;
-  left: -40px;
-  pointer-events: none;
-  color: #2AB9B7;
-}
-#icon-red {
-  position: relative;
-  top: 15px;
-  left: -40px;
-  pointer-events: none;
-  color: #FF4F4B;
-}
 
 
-.amount {
-  border-bottom: 1px solid rgb(195, 195, 195);
-  font-size: 20px;
-  padding: 20px 0;
-}
-.delete-button {
-  display:none;
-  float: left;
-  margin-right: 10px;
-}
-.delete-button-show {
-  text-align: right !important;
-  margin-right: 10px;
-}
