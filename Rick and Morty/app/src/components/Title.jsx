@@ -1,5 +1,5 @@
 import React from 'react'
-import title from '../resources/images/title.png'
+
 
 const Title = () => {
     return (
