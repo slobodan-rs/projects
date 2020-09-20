@@ -1,7 +1,18 @@
+import React from 'react'
 import styled from 'styled-components'
-import background from '../resources/images/landing-background.png'
 
-const LandingSection = styled.section`
+import background from '../resources/images/landing-background.png'
+import title from '../resources/images/title.png'
+
+const LandingSection = () => {
+    return (
+        <>
+            <h1>All about your favorite show!</h1>
+            {/* <img src={title} alt="title"  width="30%"/> */}
+        </>
+    )
+}
+const StyledLandingSection = styled.section`
     width: 100%;
     height: 863px;
     font-size: 5rem;
@@ -14,12 +25,11 @@ const LandingSection = styled.section`
     background-color: #202223;
 
 @media (max-width: 768px) {
-    padding-top: 3em;
-    height: 768px;
-    font-size: 3em;
-    background-size: 400%;
+    height: 80vh;
+    font-size: 2.4em;
+    background-size: 300%;
     background-position: center; 
     line-height: 1.6em;
 }
 `
-export default LandingSection
+export { LandingSection, StyledLandingSection, }
