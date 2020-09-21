@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import background from '../resources/images/landing-background.png'
-import title from '../resources/images/title.png'
+// import title from '../resources/images/title.png'
 
 const LandingSection = () => {
     return (

@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Link } from 'react-browser-router'
+import { Link } from 'react-router-dom'
 
 const Nav = styled.nav`
     padding: 2rem;
@@ -21,7 +21,6 @@ const StyledLink = styled(Link)`
     &:hover {
         color: ${props => props.primary ? '#56A14B' : '#7EBABD'};
         border: 2px solid ${props => props.primary ? '#56A14B' : '#7EBABD'};
-        transition: ease 0.25s all;
         
     }
 
