@@ -6,10 +6,10 @@ import background from '../resources/images/landing-background.png'
 
 const LandingSection = () => {
     return (
-        <>
+        <StyledLandingSection>
             <h1>All about your favorite show!</h1>
             {/* <img src={title} alt="title"  width="30%"/> */}
-        </>
+        </StyledLandingSection>
     )
 }
 const StyledLandingSection = styled.section`
@@ -32,4 +32,4 @@ const StyledLandingSection = styled.section`
     line-height: 1.6em;
 }
 `
-export { LandingSection, StyledLandingSection, }
+export default LandingSection

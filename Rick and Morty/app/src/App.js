@@ -1,41 +1,37 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 
-import { getAllEpisodes, getAllCaracters } from './services'
+import { getAllEpisodes } from './services'
 import logo from './resources/images/logo.png'
 
+import { faBars } from '@fortawesome/free-solid-svg-icons'
+
 import GlobalStyle from './components/GlobalStyle';
-import { Nav, StyledLink } from './components/Nav';
-import { LandingSection, StyledLandingSection } from './components/LandingSection'
-import { Seasons, StyledSeasons } from './components/Seasons'
+import { Nav, StyledLink, FontAwesome } from './components/Nav';
+import LandingSection from './components/LandingSection'
+import Seasons from './components/Seasons'
 import StyledSeason from './components/StyledSeason';
 import SeasonOne from './components/SeasonOne'
 import SeasonTwo from './components/SeasonTwo'
 import SeasonThree from './components/SeasonThree'
 import SeasonFour from './components/SeasonFour'
+import Caracters from './components/Caracters';
 import { Footer, StyledFooter } from './components/Footer';
 
 
 
 const App = () => {
   const [season, setSeason] = useState([])
-  const [caracters, setCaracters] = useState([])
-  const [episode, setEpisode] = useState(0)
   const [count, setCount] = useState(0)
+  const [burger, setBurger] = useState(false)
 
   useEffect(() => {
     getAllEpisodes(count).then(res => {
       setSeason(prev => prev.concat(res.data.results))
     })
-    getAllCaracters(1).then(res => {
-      setCaracters(res.data.results)
-    })
   }, [count])
-  // useEffect( () => {
-  //   getEpisode(episode).then(res => {
-      
-  //   })
-  // })
+
+  
 
 
   return (
@@ -44,10 +40,11 @@ const App = () => {
       <Router>
 
         <header>
-          <Nav>
+          <Nav onClick={() => burger === false ? setBurger(true) : setBurger(false) } burger={burger}>
             <Link to="/"><img src={logo} alt="logo" width="50px" /></Link>
-            <StyledLink to="/characters">CHARACTERS</StyledLink>
-            <StyledLink to="/seasons" primary="true">SEASONS</StyledLink>
+            <FontAwesome icon={faBars} size="2x" color="#E7E8E9" /> 
+            <StyledLink to="/characters"  burger={burger ? 1 : 0}>CHARACTERS</StyledLink>
+            <StyledLink to="/seasons" primary="true" burger={burger ? 1 : 0}>SEASONS</StyledLink>
           </Nav>
         </header>
 
@@ -55,34 +52,36 @@ const App = () => {
           <article>
             <Switch>
               <Route exact path="/">
-                <StyledLandingSection>
                   <LandingSection />
-                </StyledLandingSection>
               </Route>
               <Route exact path="/seasons">
-                <StyledSeasons>
                   <Seasons />
-                </StyledSeasons>
               </Route>
               <Route exact path="/seasons/season1">
                 <StyledSeason>
-                  <SeasonOne season={season} setEpisode={setEpisode}/>
+                  <SeasonOne season={season}/>
                 </StyledSeason>
               </Route>
               <Route exact path="/seasons/season2">
                 <StyledSeason>
-                  <SeasonTwo season={season} setEpisode={setEpisode} count={count} setCount={setCount}/>
+                  <SeasonTwo season={season} count={count} setCount={setCount}/>
                 </StyledSeason>
               </Route>
               <Route exact path="/seasons/season3">
                 <StyledSeason>
-                  <SeasonThree season={season} setEpisode={setEpisode} count={count} setCount={setCount}/>
+                  <SeasonThree season={season} count={count} setCount={setCount}/>
                 </StyledSeason>
               </Route>
               <Route exact path="/seasons/season4">
                 <StyledSeason>
-                  <SeasonFour season={season} setEpisode={setEpisode} count={count} setCount={setCount}/>
+                  <SeasonFour season={season} count={count} setCount={setCount}/>
                 </StyledSeason>
+              </Route>
+              <Route exact path="/characters">
+                  <Caracters />
+              </Route>
+              <Route path="/characters/:id">
+                  <Caracters />
               </Route>
   
             </Switch>

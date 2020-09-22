@@ -1,7 +1,7 @@
 import React from 'react'
 import Flippy, { FrontSide } from 'react-flippy';
 
-const SeasonThree = ({ count, season, setCount }) => {
+const SeasonThree = ({ season, setCount }) => {
     setCount(2)
     return (
         season.filter(episode => episode.episode.includes('S03')).map(episode =>

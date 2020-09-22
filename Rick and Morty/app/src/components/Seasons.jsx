@@ -17,56 +17,56 @@ const Seasons = () => {
 
 
     return (
-        <>
+        <StyledSeasons>
             <Flippy style={{ width: '320px', height: '420px', backgroundColor: '#202223' }} flipOnHover={true}>
                 <FrontSide>
                     <img src={season1} alt="season-1" />
-                    <p>Season 1</p>
+                    <p>Season One</p>
                 </FrontSide>
-                <BackSide style={{ backgroundColor: '#E7E8E9', color: '#202223' }} onClick={() => history.push('/seasons/season1')}>
-                    Season 1
-                </BackSide>
+                <StyledBackSide style={{ backgroundColor: '#E7E8E9', color: '#202223' }} onClick={() => history.push('/seasons/season1')}>
+                    <p>Season One</p>
+                </StyledBackSide>
             </Flippy>
             <Flippy style={{ width: '320px', height: '420px', backgroundColor: '#202223' }} flipOnHover={true}>
                 <FrontSide>
                     <img src={season2} alt="season-2" />
-                    <p>Season 3</p>
+                    <p>Season Two</p>
                 </FrontSide>
-                <BackSide style={{ backgroundColor: '#E7E8E9', color: '#202223' }} onClick={() => history.push('/seasons/season2')}>
-                    Season 2
-                </BackSide>
+                <StyledBackSide style={{ backgroundColor: '#E7E8E9', color: '#202223' }} onClick={() => history.push('/seasons/season2')}>
+                    <p>Season Two</p>
+                </StyledBackSide>
             </Flippy>
             <Flippy style={{ width: '320px', height: '420px', backgroundColor: '#202223' }} flipOnHover={true}>
                 <FrontSide>
                     <img src={season3} alt="season-3"  width="293px" height="341"/>
-                    <p>Season 3</p>
+                    <p>Season Three</p>
                 </FrontSide>
-                <BackSide style={{ backgroundColor: '#E7E8E9', color: '#202223' }} onClick={() => history.push('/seasons/season3')}>
-                    Season 3
-                </BackSide>
+                <StyledBackSide style={{ backgroundColor: '#E7E8E9', color: '#202223' }} onClick={() => history.push('/seasons/season3')}>
+                    <p>Season Three</p>
+                </StyledBackSide>
             </Flippy>
             <Flippy style={{ width: '320px', height: '420px', backgroundColor: '#202223' }} flipOnHover={true}>
                 <FrontSide>
                     <img src={season4} alt="season-4" width="293px" height="341" />
-                    <p>Season 4</p>
+                    <p>Season Four</p>
                 </FrontSide>
-                <BackSide style={{ backgroundColor: '#E7E8E9', color: '#202223' }} onClick={() => history.push('/seasons/season4')}>
-                    Season 4
-                </BackSide>
+                <StyledBackSide style={{ backgroundColor: '#E7E8E9', color: '#202223' }} onClick={() => history.push('/seasons/season4')}>
+                    <p>Season Four</p>
+                </StyledBackSide>
             </Flippy>
-        </>
+        </StyledSeasons>
     )
 }
 
 const StyledSeasons = styled.section`
     width: 100%;
-    height: 863px;
+    height: 70vh;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
     text-align: center;
-    padding-top: 400px;
+    padding-top: 20rem;
     font-size: 1.6rem;
     color: #E7E8E9;
     background-color: #E7E8E9;
@@ -80,5 +80,9 @@ const StyledSeasons = styled.section`
         padding: 20px 5px;
     }
 `
+const StyledBackSide = styled(BackSide)`
+    padding-top: 50%;
+    font-size: 3rem;
+`
 
-export { Seasons, StyledSeasons }
+export default Seasons

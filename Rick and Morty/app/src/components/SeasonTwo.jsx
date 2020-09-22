@@ -3,6 +3,7 @@ import Flippy, { FrontSide } from 'react-flippy';
 
 const SeasonTwo = ({ count, season, setCount }) => {
     setCount(1)
+    setCount(2)
     return (
         season.filter(episode => episode.episode.includes('S02')).map(episode =>
             <Flippy style={{ width: '200px', height: '300px', padding: '30px' }} key={episode.id}>

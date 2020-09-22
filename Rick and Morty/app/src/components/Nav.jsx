@@ -1,5 +1,6 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { Link } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const Nav = styled.nav`
     padding: 2rem;
@@ -8,6 +9,7 @@ const Nav = styled.nav`
 
     @media (max-width: 768px) {
         height: 3em;
+        height: ${({burger}) => burger ? '10em' : '3em'};
     }
 `
 
@@ -25,8 +27,24 @@ const StyledLink = styled(Link)`
     }
 
     @media (max-width: 768px) {
-        padding-right: 0;
+        display: none;
+
+        ${({burger}) => burger && css`
+            text-align: center;
+            float: none;
+            display: block;
+        `}
+    }
+`
+const FontAwesome = styled(FontAwesomeIcon)`
+    display:none;
+
+    @media (max-width: 768px) {
+    display: block;
+    padding-top: 10px;
+    float: right;
     }
 `
 
-export { Nav, StyledLink }
+
+export { Nav, StyledLink, FontAwesome }
