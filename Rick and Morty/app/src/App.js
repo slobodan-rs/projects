@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route, Link, Redirect } from 'react-router-dom'
 
-import { getAllEpisodes } from './services'
+import { getAllSeasons } from './services'
 import logo from './resources/images/logo.png'
 
 import { faBars } from '@fortawesome/free-solid-svg-icons'
@@ -17,21 +17,23 @@ import SeasonThree from './components/SeasonThree'
 import SeasonFour from './components/SeasonFour'
 import Caracters from './components/Caracters';
 import { Footer, StyledFooter } from './components/Footer';
+import Sign from './components/Sign';
 
 
 
 const App = () => {
   const [season, setSeason] = useState([])
-  const [count, setCount] = useState(0)
   const [burger, setBurger] = useState(false)
+  const [user, setUser] = useState(false)
+  const [login, setLogin] = useState(true)
 
   useEffect(() => {
-    getAllEpisodes(count).then(res => {
-      setSeason(prev => prev.concat(res.data.results))
+    getAllSeasons().then(res => {
+      setSeason(prev => prev.concat(res.data))
     })
-  }, [count])
+  }, [])
 
-  
+
 
 
   return (
@@ -40,10 +42,10 @@ const App = () => {
       <Router>
 
         <header>
-          <Nav onClick={() => burger === false ? setBurger(true) : setBurger(false) } burger={burger}>
+          <Nav onClick={() => burger === false ? setBurger(true) : setBurger(false)} burger={burger} login={login}>
             <Link to="/"><img src={logo} alt="logo" width="50px" /></Link>
-            <FontAwesome icon={faBars} size="2x" color="#E7E8E9" /> 
-            <StyledLink to="/characters"  burger={burger ? 1 : 0}>CHARACTERS</StyledLink>
+            <FontAwesome icon={faBars} size="2x" color="#E7E8E9" />
+            <StyledLink to="/characters" burger={burger ? 1 : 0}>CHARACTERS</StyledLink>
             <StyledLink to="/seasons" primary="true" burger={burger ? 1 : 0}>SEASONS</StyledLink>
           </Nav>
         </header>
@@ -51,46 +53,48 @@ const App = () => {
         <main>
           <article>
             <Switch>
-              <Route exact path="/">
-                  <LandingSection />
+              <Route exact path="/" render={() => user ? (<Redirect to="/" />) : (<Redirect to="/login" />)}>
+                <LandingSection />
               </Route>
               <Route exact path="/seasons">
-                  <Seasons />
+                <Seasons />
               </Route>
               <Route exact path="/seasons/season1">
                 <StyledSeason>
-                  <SeasonOne season={season}/>
+                  <SeasonOne season={season} />
                 </StyledSeason>
               </Route>
               <Route exact path="/seasons/season2">
                 <StyledSeason>
-                  <SeasonTwo season={season} count={count} setCount={setCount}/>
+                  <SeasonTwo season={season} />
                 </StyledSeason>
               </Route>
               <Route exact path="/seasons/season3">
                 <StyledSeason>
-                  <SeasonThree season={season} count={count} setCount={setCount}/>
+                  <SeasonThree season={season} />
                 </StyledSeason>
               </Route>
               <Route exact path="/seasons/season4">
                 <StyledSeason>
-                  <SeasonFour season={season} count={count} setCount={setCount}/>
+                  <SeasonFour season={season} />
                 </StyledSeason>
               </Route>
               <Route exact path="/characters">
-                  <Caracters />
+                <Caracters />
               </Route>
               <Route path="/characters/:id">
-                  <Caracters />
+                <Caracters />
               </Route>
-  
+              <Route path="/sign">
+                <Sign setLogin={setLogin} />
+              </Route>
             </Switch>
           </article>
         </main>
 
-          <StyledFooter>
-            <Footer />
-          </StyledFooter>
+        <StyledFooter>
+          <Footer />
+        </StyledFooter>
 
       </Router>
     </>

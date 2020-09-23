@@ -1,13 +1,13 @@
 import React from 'react'
 import Flippy, { FrontSide } from 'react-flippy';
 
-const SeasonThree = ({ season, setCount }) => {
-    setCount(2)
+const SeasonThree = ({ season }) => {
     return (
         season.filter(episode => episode.episode.includes('S03')).map(episode =>
-            <Flippy style={{ width: '200px', height: '300px', padding: '30px' }} key={episode.id}>
+            <Flippy style={{ width: '300px', height: '400px', padding: '30px' }} key={episode.id}>
                 <FrontSide episode={episode}>
                     <>
+                        <img src={episode.img} width="200px" alt={episode.name}/>
                         <div>{episode.episode}</div>
                         <div>{episode.name}</div>
                     </>

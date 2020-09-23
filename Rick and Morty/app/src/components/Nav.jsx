@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const Nav = styled.nav`
+    display: ${({login}) => login ? 'none' : 'block'};
     padding: 2rem;
     font-size: 1.6rem;
     background-color: #202223;
