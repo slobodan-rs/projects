@@ -5,13 +5,13 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 
 const Footer = () => {
     return (
-        <div>
+        <StyledFooter>
             <p>Developed By: <span style={{color:"#E7E8E9"}}> Slobodan</span></p>
             <a href="mailto:mr.slobodan@hotmail.rs">
                 <FontAwesomeIcon icon={faEnvelope} size="2x" color="#E7E8E9" />
             </a>
             <p>All Rights Belongs To: TM & © 2020 Turner Broadcasting System, Inc. A WarnerMedia Company</p>
-        </div>
+        </StyledFooter>
     )
 }
 const StyledFooter = styled.footer`
@@ -27,4 +27,4 @@ const StyledFooter = styled.footer`
         height: 100%;
     }
 `
-export { Footer, StyledFooter}
+export default Footer

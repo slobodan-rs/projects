@@ -142,7 +142,7 @@ const Page = styled.button`
     border: 2px solid black;
     border-radius: 0.5rem;
     cursor: pointer;
-    background-color: ${props => props.backgroundColor ? '#7EBABD' : null};
+    /* background-color: ${props => props.backgroundColor ? '#7EBABD' : null}; */
 
     &:hover {
         background-color: #56A14B; 

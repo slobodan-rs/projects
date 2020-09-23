@@ -2,13 +2,11 @@ import React from 'react'
 import styled from 'styled-components'
 
 import background from '../resources/images/landing-background.png'
-// import title from '../resources/images/title.png'
 
 const LandingSection = () => {
     return (
         <StyledLandingSection>
             <h1>All about your favorite show!</h1>
-            {/* <img src={title} alt="title"  width="30%"/> */}
         </StyledLandingSection>
     )
 }
@@ -20,9 +18,10 @@ const StyledLandingSection = styled.section`
     padding-top: 2rem;
     color: #D8E7ED;
     background-image: url(${background});
-    background-size: 90%;
+    background-size: 100%;
     background-repeat: no-repeat;
     background-color: #202223;
+    background-position: center; 
 
 @media (max-width: 768px) {
     height: 80vh;

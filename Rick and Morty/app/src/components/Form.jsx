@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { useHistory } from 'react-router-dom'
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 
 import title from '../resources/images/title.png'
 import { getUsers, postUsers } from '../services'
 
 
-const Login = ({ setLogin }) => {
+const Form = ({ setLogin, setUser }) => {
     const [users, setUsers] = useState([])
     const [userName, setUserName] = useState('')
     const [userPassword, setPassword] = useState('')
@@ -17,12 +17,14 @@ const Login = ({ setLogin }) => {
     const [formPar, setFormPar] = useState('Need and account? Join now!')
     
     const history = useHistory()
-    
+    const componentIsMounted = useRef(true)
+
     useEffect(() => {
         getUsers().then(res => {
             setUsers(res.data)
         })
-    },[userName, userPassword])
+        return () => { componentIsMounted.current = false }
+    },[userName])
 
 
     const handleLogin = (e) =>{
@@ -36,6 +38,7 @@ const Login = ({ setLogin }) => {
                 setError('Error')
                 setFormType('Login')
             }
+            return setUser(true)
         })
         setTimeout(() => setError(''), 2000)
     }
@@ -54,6 +57,7 @@ const Login = ({ setLogin }) => {
                 setError('Error')
                 setFormType('Sign Up')  
             }
+            return setUser(false)
         })
         setTimeout(() => setError(''), 2000)        
     }
@@ -78,7 +82,7 @@ const Login = ({ setLogin }) => {
 
 const StyledLogin = styled.div`
     width: 100vw;
-    height: 90vh;
+    height: 85vh;
     text-align: center;
     background-color: #202223;
     background-image: url(${title});
@@ -108,10 +112,12 @@ const StyledForm = styled.form`
     }
 `
 const InputText = styled.input.attrs({ type: 'text' })`
+    padding: 1rem;
     margin-bottom: 1rem;
     width: 80%;
 `
 const InputPassword = styled.input.attrs({ type: 'password' })`
+    padding: 1rem;
     margin-bottom: 2rem;
     width: 80%;
 `
@@ -136,4 +142,4 @@ const SignUp = styled.p`
     }
 `
 
-export default Login
+export default Form
