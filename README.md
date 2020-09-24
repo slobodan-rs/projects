@@ -2,6 +2,20 @@
 HTML/CSS/JS/REACT
 
 --------------------------------
+###   Rick And Morty
+     -React
+    
+        Dependencies:
+         - NPM 
+         - React
+         - Styled Components
+         - React Router Dom
+         - React Flippy
+         - Axios
+         - Fontawsome Icons
+         - Json Server
+
+--------------------------------
 ###   Portfolio Website
      -HTML/CSS
     

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useHistory } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import { getAllCaracters } from '../services'
 import Flippy, { FrontSide, BackSide } from 'react-flippy';
 import styled from 'styled-components';
@@ -7,13 +7,15 @@ import styled from 'styled-components';
 const Caracters = () => {
     const [caracters, setCaracters] = useState({})
     const [page, setPage] = useState(1)
-    const [pageColor, setPageColor] = useState(false)
     const [counter, setCounter] = useState(0)
     const [newCounter, setNewCounter] = useState(1)
+
+    const { id } = useParams()
     
     const history = useHistory()
     let results = caracters.results
     let pages = [...Array(counter).keys()]
+    
 
 
     useEffect(() => {
@@ -26,7 +28,6 @@ const Caracters = () => {
     const handleClick = (id) => {
         history.push(`/characters/${id}`)
         setPage(id)
-        setPageColor(true)
     }
     const handlePagesPlus = () => {
         setNewCounter(newCounter === counter ? null : newCounter + 6)
@@ -74,7 +75,7 @@ const Caracters = () => {
             <Page disabled={newCounter === 1} onClick={() =>  handlePagesMinus()}>Prev</Page>
                {pages.splice(newCounter, 6).map(page => 
             
-                        <Page onClick={ () => handleClick(page)} key={page} backgroundColor={pageColor}>{page}</Page>
+                        <Page onClick={ () => handleClick(page)} key={page} backgroundColor={+id === page}>{page}</Page>
                     )}
             <Page disabled={newCounter > 30 }onClick={() => handlePagesPlus()}>Next</Page>
         </Pages>
@@ -142,7 +143,7 @@ const Page = styled.button`
     border: 2px solid black;
     border-radius: 0.5rem;
     cursor: pointer;
-    /* background-color: ${props => props.backgroundColor ? '#7EBABD' : null}; */
+    background-color: ${props => props.backgroundColor ? '#7EBABD' : null};
 
     &:hover {
         background-color: #56A14B; 

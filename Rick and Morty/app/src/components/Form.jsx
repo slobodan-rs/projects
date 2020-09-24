@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 import styled from 'styled-components'
 
@@ -17,30 +17,30 @@ const Form = ({ setLogin, setUser }) => {
     const [formPar, setFormPar] = useState('Need and account? Join now!')
     
     const history = useHistory()
-    const componentIsMounted = useRef(true)
 
     useEffect(() => {
+        let mounted = true
         getUsers().then(res => {
+
             setUsers(res.data)
         })
-        return () => { componentIsMounted.current = false }
+        return () => mounted = false
     },[userName])
 
 
     const handleLogin = (e) =>{
-        e.preventDefault()
-        users.filter(user => {
-            if(user.name.includes(userName) && user.password.includes(userPassword) && userName !== '' && userPassword !== ''){
-                setLogin(false)
-                history.push('/')
-            }
-            else{
-                setError('Error')
+        e.preventDefault() 
+        if(users.some(user => user.name.includes(userName) && user.password.includes(userPassword) && userName !== '' && userPassword !== '')){
+            setLogin(false)
+            history.push('/')
+            setUserName('')
+            setPassword('')
+        }
+        else{
+            setError('Error')
                 setFormType('Login')
-            }
-            return setUser(true)
-        })
-        setTimeout(() => setError(''), 2000)
+            setTimeout(() => setError(''), 2000)
+        }
     }
     const handleSignUp = (e) => {
         e.preventDefault()
@@ -48,18 +48,21 @@ const Form = ({ setLogin, setUser }) => {
             name: userName,
             password : userPassword
         }
-        users.filter(user => {
-            if(user.name !== userName && userName !== '' && userPassword !== ''){
-                postUsers(tmp)
-                setFormType('Login')
+            if(users.some(user =>user.name.includes(userName) && userName !== '' && userPassword !== '')){
+                setError('Error')
+                setFormType('Sign Up')
+                setTimeout(() => setError(''), 2000)
+                setUserName('')
+                setPassword('')
+                
+                
             }
             else {
-                setError('Error')
-                setFormType('Sign Up')  
+                postUsers(tmp)
+                setFormType('Login')    
+                setUserName('')
+                setPassword('')
             }
-            return setUser(false)
-        })
-        setTimeout(() => setError(''), 2000)        
     }
     
     const handleSwitch = () => {
@@ -70,8 +73,8 @@ const Form = ({ setLogin, setUser }) => {
         <StyledLogin>
             <StyledForm onSubmit={(e) => { formType === 'Login' ? handleLogin(e) : handleSignUp(e)}}>
                 <h2>{formType}</h2>
-                <InputText type="text" placeholder="User Name" onChange={(e) => setUserName(e.target.value)} required/>
-                <InputPassword type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} required/>
+                <InputText type="text" placeholder="User Name" onChange={(e) => setUserName(e.target.value) } value={userName} required/>
+                <InputPassword type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} value={userPassword} required/>
                 <InputSubmit type="submit" value={formType} />
                 <SignUp onClick={() => handleSwitch()} color={formType}>{formPar}</SignUp>
                 <Error>{error}</Error>

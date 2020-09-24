@@ -25,7 +25,6 @@ const App = () => {
   const [user, setUser] = useState(false)
   const [login, setLogin] = useState(true)
 
-  const title = useState('')
 
   useEffect(() => {
     getAllSeasons().then(res => {
@@ -42,7 +41,7 @@ const App = () => {
           <Nav onClick={() => burger === false ? setBurger(true) : setBurger(false)} burger={burger} login={login}>
             <Link to="/"><img src={logo} alt="logo" width="50px" /></Link>
             <FontAwesome icon={faBars} size="2x" color="#E7E8E9" />
-            <StyledLink to="/characters" burger={burger ? 1 : 0}>CHARACTERS</StyledLink>
+            <StyledLink to="/characters/1" burger={burger ? 1 : 0}>CHARACTERS</StyledLink>
             <StyledLink to="/seasons" primary="true" burger={burger ? 1 : 0}>SEASONS</StyledLink>
           </Nav>
         </header>
@@ -80,10 +79,6 @@ const App = () => {
                 <StyledSeason>
                   <SeasonFour season={season} />
                 </StyledSeason>
-              </Route>
-              <Route exact path="/characters">
-                <Title title={'Caracters'}/>
-                <Caracters />
               </Route>
               <Route path="/characters/:id">
                 <Title title={'Caracters'}/>
