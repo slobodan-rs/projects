@@ -53,9 +53,7 @@ const Form = ({ setLogin, setUser }) => {
                 setFormType('Sign Up')
                 setTimeout(() => setError(''), 2000)
                 setUserName('')
-                setPassword('')
-                
-                
+                setPassword('') 
             }
             else {
                 postUsers(tmp)
