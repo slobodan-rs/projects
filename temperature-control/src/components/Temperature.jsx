@@ -39,7 +39,7 @@ const Status = styled.div`
 	font-size: 48px;
 	border: 3px #ffffff solid;
     margin-left: 20%;
-    background-color: ${({color}) => color ? '#FB7300' : null};
+    background-color: ${({color}) => color ? '#FB7300' : '#3275B5'};
     transition: background 0.5s;
 `
 const TempControl = styled.div`
