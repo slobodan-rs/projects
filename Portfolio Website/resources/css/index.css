@@ -1,11 +1,15 @@
 html {
-    scroll-behavior: smooth;  
+    scroll-behavior: smooth;
+    font-size: 62.5%;
 }
 body {
-    font-family: "Exo 2", sans-serif;
+    font-family: "Exo 2", "Trebuchet MS", Helvetica, sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    width: 100vw;
+    
+    
 }
 /* -------------- Header ----------------- */
 header {
@@ -14,11 +18,12 @@ header {
     height: 100vh;
 }
 .nav-bar {
-    padding-top: 50px;
+    padding-top: 5rem;
     margin: auto;
     width: 100vw;
     text-align: center;
     font-weight: bold;
+    font-size: 1.8rem;
 }
 .nav-bar ul {
     padding-left: 0;
@@ -30,23 +35,25 @@ header {
 .nav-bar a {
     text-decoration: none;
     color: black;
-    padding: 15px;
+    padding: 2rem;
 }
 .nav-bar a:hover {
     background-color: #fff55a;
 }
 .main-header {
     color: #f55e3c;
-    font-size: 9vh;
+    font-size: 7rem;
     font-family: "Unica One", cursive;
     width: 50%;
     text-align: center;
     margin: auto;
-    padding-top: 25vh;
+    padding-top: 8%;
 }
 /* -------------- Main ----------------- */
 #who {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
     width: 100vw;
     height: 100vh;
     background: linear-gradient(72deg, rgba(185,185,185,1) 0%, rgba(228,228,228,1) 37%, rgba(255,255,255,1) 60%);
@@ -56,33 +63,33 @@ header {
 .section-left {
     flex: 1;
     margin-left: 15vw;
-    margin-top: 20vh;
-    flex-grow: 4
+    margin-top: 25vh;
+    flex-grow: 4;
     
 }
 .section-left h1 {
-    font-size: 6vw;
+    font-size: 12rem;
     color: #f55e3c;
     line-height: 0;
+    margin-bottom: 4rem;
 }
 .section-left h3 {
     color: #1544c0;
     line-height: 0;
     text-transform: uppercase;
     letter-spacing: 0.12em;
-    font-size: 1.4em;
+    font-size: 3rem;
     margin-bottom: -50px;
     padding-left: 10px;
 }
 .section-left p {
-    font-size: 1.2em;
+    font-size: 1.8rem;
     color: rgb(44, 43, 43);
-    line-height: 1.5em;
+    line-height: 1.2em;
     padding-right: 90px;
-    margin-top: -50px;
 }
 .second-paragraph {
-    padding-top: 80px;
+    padding-top: 0px;
 }
 .section-left ul {
     padding-left: 0px;
@@ -116,7 +123,7 @@ header {
 #work h1 {
     color: white;
     line-height: 0.1;
-    font-size: 7vw;
+    font-size: 12rem;
 }
 #work h1::first-letter {
     font-size: 120%;
@@ -163,10 +170,10 @@ footer {
     padding-top: 100px;
 }
 footer h1 {
-    font-size: 3vw;
+    font-size: 7rem;
 }
 footer p {
-    font-size: 1.6em;
+    font-size: 2rem;
     color: rgb(44, 43, 43);
     padding-top: 10px;
 }
@@ -186,4 +193,79 @@ footer a {
 }
 footer a:hover {
     color: #1544c0;
+}
+/* ------------MEDIA Query --------------- */
+@media only screen and (max-width: 768px) {
+    .nav-bar {
+        font-size: 1.6em;
+    }
+    .main-header{
+        font-size: 4em;
+        padding-top: 20vh;
+        margin: auto  
+    }
+    #who {
+        width: 100vw;
+        height: 100vh;
+    }
+    .section-right {
+        display: none;
+    }
+    .section-left {
+        flex: 1;
+        margin-left: 0;
+        margin-top: 10vh;
+        flex-grow: 4;
+        padding: 20px;
+        
+    }
+    .section-left h1 {
+        font-size: 6em;
+        line-height: 12px;
+        margin-bottom: 1em;
+        padding: 5px 10px;
+    }
+    .section-left h3 {
+        color: #1544c0;
+        line-height: 0;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        font-size: 2.2em;
+        padding:0 10px 40px 10px;
+        text-align: center;
+    }
+    .section-left p {
+        font-size: 1.9em;
+        color: rgb(44, 43, 43);
+        line-height: 1.6em;
+        padding: 0 30px 0 10px;
+    }
+    .section-left ul > li {
+        padding-left: 15px;
+    }
+    .second-paragraph {
+        padding-top: 0px;
+    }
+    #work {
+        padding-top: 30vh;
+    }
+    #work h1 {
+        line-height: 0.1;
+        font-size: 7em;
+    }
+    .github-link {
+        font-size: 2em;
+        padding: 10px 20px;
+        border: 2px solid #f55e3c;
+        background-color: inherit;
+        border-radius: 50px;
+    }
+    footer h1 {
+        font-size: 4em;
+    }
+    footer p {
+        font-size: 1.9em;
+        color: rgb(44, 43, 43);
+        padding: 10px;
+    }
 }
