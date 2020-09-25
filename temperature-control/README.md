@@ -2,6 +2,9 @@
 
 Increases and decreases the temperature on click
 
+![tmp control img](https://github.com/slobodan-rs/projects/blob/master/temperature-control/project.gif?raw=true)
+
+
 ## Technologies
 
     - React: 16.13.1
