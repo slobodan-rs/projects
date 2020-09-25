@@ -2,7 +2,7 @@
 
 Nice looking Budget Calculator with Income and Expense Categories, ability to remove and add 
 
-![tmp control img](https://github.com/slobodan-rs/projects/blob/master/Budget-Calculator-React/budget.png?raw=true)
+![tmp control img](https://github.com/slobodan-rs/projects/blob/master/Budget\Calculator\React/budget.png?raw=true)
 
 
 ## Technologies
