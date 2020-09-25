@@ -1,6 +1,6 @@
 # Simple Temperature Control App
 
-Increases and decreases the temperature on click
+Increases and decreases temperature on click
 
 ![tmp control img](https://github.com/slobodan-rs/projects/blob/master/temperature-control/project.gif?raw=true)
 
