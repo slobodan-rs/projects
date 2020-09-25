@@ -16,6 +16,15 @@ HTML/CSS/JS/REACT
          - Json Server
 
 --------------------------------
+###   Temperature Control App
+     -React
+    
+        Dependencies:
+         - NPM 
+         - React
+         - Styled Components
+
+--------------------------------
 ###   Portfolio Website
      -HTML/CSS
     
