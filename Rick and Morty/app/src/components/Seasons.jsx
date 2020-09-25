@@ -1,7 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import { useHistory } from 'react-router-dom'
-import Flippy, { FrontSide, BackSide } from 'react-flippy';
+import Flippy, { FrontSide } from 'react-flippy';
+import Loader from 'react-loader-spinner'
 
 import season1 from '../resources/images/seasons/season-1.png'
 import season2 from '../resources/images/seasons/season-2.png'
@@ -9,55 +10,50 @@ import season3 from '../resources/images/seasons/season-3.png'
 import season4 from '../resources/images/seasons/season-4.png'
 import portal from '../resources/images/portal.png'
 
-
-
-
-const Seasons = () => {
+const Seasons = ({ setSeasonFilter, setTitle }) => {
     const history = useHistory()
 
-
     return (
+        <>
+        <StyledLoader type="Rings" color="#56A14B" height={80} width={80} timeout={500}/>
         <StyledSeasons>
-            <Flippy style={{ width: '320px', height: '420px', backgroundColor: '#202223' }} flipOnHover={true}>
-                <FrontSide>
+            <Flippy style={{ width: '320px', height: '420px', backgroundColor: '#202223'}}>
+                <FrontSide onClick={() => {history.push(`/seasons/${1}`); setSeasonFilter('S01'); setTitle('Season One'); window.scrollTo(0, 0)}} >
                     <img src={season1} alt="season-1" />
                     <p>Season One</p>
                 </FrontSide>
-                <StyledBackSide style={{ backgroundColor: '#E7E8E9', color: '#202223' }} onClick={() => history.push('/seasons/season1')}>
-                    <p>Season One</p>
-                </StyledBackSide>
             </Flippy>
-            <Flippy style={{ width: '320px', height: '420px', backgroundColor: '#202223' }} flipOnHover={true}>
-                <FrontSide>
+            <Flippy style={{ width: '320px', height: '420px', backgroundColor: '#202223' }}>
+                <FrontSide onClick={() => {history.push(`/seasons/${2}`); setSeasonFilter('S02'); setTitle('Season Two'); window.scrollTo(0, 0)}} >
                     <img src={season2} alt="season-2" />
                     <p>Season Two</p>
                 </FrontSide>
-                <StyledBackSide style={{ backgroundColor: '#E7E8E9', color: '#202223' }} onClick={() => history.push('/seasons/season2')}>
-                    <p>Season Two</p>
-                </StyledBackSide>
+                
             </Flippy>
-            <Flippy style={{ width: '320px', height: '420px', backgroundColor: '#202223' }} flipOnHover={true}>
-                <FrontSide>
+            <Flippy style={{ width: '320px', height: '420px', backgroundColor: '#202223' }}>
+                <FrontSide onClick={() => {history.push(`/seasons/${3}`); setSeasonFilter('S03'); setTitle('Season Three'); window.scrollTo(0, 0)}} >
                     <img src={season3} alt="season-3"  width="293px" height="341"/>
                     <p>Season Three</p>
                 </FrontSide>
-                <StyledBackSide style={{ backgroundColor: '#E7E8E9', color: '#202223' }} onClick={() => history.push('/seasons/season3')}>
-                    <p>Season Three</p>
-                </StyledBackSide>
+                
             </Flippy>
-            <Flippy style={{ width: '320px', height: '420px', backgroundColor: '#202223' }} flipOnHover={true}>
-                <FrontSide>
+            <Flippy style={{ width: '320px', height: '420px', backgroundColor: '#202223' }}>
+                <FrontSide onClick={() => {history.push(`/seasons/${4}`); setSeasonFilter('S04'); setTitle('Season Four'); window.scrollTo(0, 0)}} >
                     <img src={season4} alt="season-4" width="293px" height="341" />
                     <p>Season Four</p>
                 </FrontSide>
-                <StyledBackSide style={{ backgroundColor: '#E7E8E9', color: '#202223' }} onClick={() => history.push('/seasons/season4')}>
-                    <p>Season Four</p>
-                </StyledBackSide>
             </Flippy>
         </StyledSeasons>
+        </>
     )
 }
-
+const StyledLoader = styled(Loader)`
+    padding-top: 15%;
+    text-align: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: #E7E8E9;
+`
 const StyledSeasons = styled.section`
     width: 100%;
     height: 70vh;
@@ -77,12 +73,9 @@ const StyledSeasons = styled.section`
 
     @media(max-width: 768px){
         height: 100%;
-        padding: 20px 5px;
+        padding: 20px 0;
+        
     }
-`
-const StyledBackSide = styled(BackSide)`
-    padding-top: 50%;
-    font-size: 3rem;
 `
 
 export default Seasons

@@ -4,15 +4,12 @@ import { faBars } from '@fortawesome/free-solid-svg-icons'
 
 import { getAllSeasons } from './services'
 import logo from './resources/images/logo.png'
+
 import GlobalStyle from './components/GlobalStyle';
 import { Nav, StyledLink, FontAwesome } from './components/Nav';
 import LandingSection from './components/LandingSection'
 import Seasons from './components/Seasons'
-import StyledSeason from './components/StyledSeason';
-import SeasonOne from './components/SeasonOne'
-import SeasonTwo from './components/SeasonTwo'
-import SeasonThree from './components/SeasonThree'
-import SeasonFour from './components/SeasonFour'
+import Season from './components/Season'
 import Caracters from './components/Caracters';
 import Footer from './components/Footer';
 import Form from './components/Form';
@@ -21,10 +18,11 @@ import Title from './components/Title';
 
 const App = () => {
   const [season, setSeason] = useState([])
+  const [seasonFilter, setSeasonFilter] = useState('')
+  const [title, setTitle] = useState('')
   const [burger, setBurger] = useState(false)
   const [user, setUser] = useState(false)
   const [login, setLogin] = useState(true)
-
 
   useEffect(() => {
     getAllSeasons().then(res => {
@@ -48,49 +46,30 @@ const App = () => {
 
         <main>
           <article>
-          {user ? <Redirect to="/" /> : <Redirect to ="/signin" />}
+            {user ? <Redirect to="/" /> : <Redirect to="/signin" />}
             <Switch>
               <Route exact path="/">
                 <LandingSection />
               </Route>
               <Route exact path="/seasons">
-                <Seasons />
+                <Seasons setSeasonFilter={setSeasonFilter} setTitle={setTitle}/>
               </Route>
-              <Route exact path="/seasons/season1">
-                <Title title={'Season One'}/>
-                <StyledSeason>
-                  <SeasonOne season={season} />
-                </StyledSeason>
-              </Route>
-              <Route exact path="/seasons/season2">
-                <Title title={'Season Two'}/>
-                <StyledSeason>
-                  <SeasonTwo season={season} />
-                </StyledSeason>
-              </Route>
-              <Route exact path="/seasons/season3">
-                <Title title={'Season Three'}/>
-                <StyledSeason>
-                  <SeasonThree season={season} />
-                </StyledSeason>
-              </Route>
-              <Route exact path="/seasons/season4">
-                <Title title={'Season Four'}/>
-                <StyledSeason>
-                  <SeasonFour season={season} />
-                </StyledSeason>
-              </Route>
-              <Route path="/characters/:id">
-                <Title title={'Caracters'}/>
-                <Caracters />
+              <Route exact path="/seasons/:num">
+                <Title title={title} />
+                <Season season={season} seasonFilter={seasonFilter} />
               </Route>
               <Route path="/signin">
-                <Form setLogin={setLogin}  setUser={setUser}/>
+                <Form setLogin={setLogin} setUser={setUser} />
+              </Route>
+              <Route path="/characters/:id">
+                <Title title="Caracters" />
+                <Caracters setTitle={setTitle} />
               </Route>
             </Switch>
           </article>
         </main>
-          <Footer />
+
+        <Footer />
       </Router>
     </>
   )

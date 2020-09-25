@@ -3,6 +3,7 @@ import { useHistory, useParams } from 'react-router-dom';
 import { getAllCaracters } from '../services'
 import Flippy, { FrontSide, BackSide } from 'react-flippy';
 import styled from 'styled-components';
+import Loader from 'react-loader-spinner'
 
 const Caracters = () => {
     const [caracters, setCaracters] = useState({})
@@ -10,14 +11,12 @@ const Caracters = () => {
     const [counter, setCounter] = useState(0)
     const [newCounter, setNewCounter] = useState(1)
 
-    const { id } = useParams()
-    
+    const { id } = useParams() 
     const history = useHistory()
+    
     let results = caracters.results
     let pages = [...Array(counter).keys()]
     
-
-
     useEffect(() => {
         getAllCaracters(page).then(res => {
             setCaracters(res.data)
@@ -26,8 +25,9 @@ const Caracters = () => {
     }, [page])
 
     const handleClick = (id) => {
-        history.push(`/characters/${id}`)
+        history.push(`/rick-and-morty/characters/${id}`)
         setPage(id)
+        window.scrollTo(0, 0)
     }
     const handlePagesPlus = () => {
         setNewCounter(newCounter === counter ? null : newCounter + 6)
@@ -38,9 +38,10 @@ const Caracters = () => {
     
     return (
         <>
+        <StyledLoader type="Rings" color="#56A14B" height={80} width={80} timeout={1000}/>
         <StyledCaracters>
             {results ? results.map(caracter =>
-                <StyledFlippy flipOnHover={true} key={caracter.id}>
+                <StyledFlippy flipOnHover={true} key={caracter.id} style={{padding: '30px'}}>
                     <FrontSide>
                         <div>
                             <img src={caracter.image} alt={caracter.name} width="293px" />
@@ -82,7 +83,13 @@ const Caracters = () => {
         </>
     )
 }
-
+const StyledLoader = styled(Loader)`
+    padding-top: 15%;
+    text-align: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: #E7E8E9;
+`
 const StyledCaracters = styled.section`
     text-align: center;
     width: 100%;
@@ -118,7 +125,7 @@ const Name = styled.p`
 /* -webkit-transform: rotate(-15deg);  */
     font-size: 4rem;
     text-align: center;
-    margin-top: 0px;
+    margin-top: 0;
 `
 const RightSpan = styled.span`
     float: right;

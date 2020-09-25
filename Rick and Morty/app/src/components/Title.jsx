@@ -6,7 +6,6 @@ const Title = ({title}) => {
         <StyledTitle>{title}</StyledTitle>
     )
 }
-
 const StyledTitle = styled.h1`
     font-size: 5rem;
     text-align: center;

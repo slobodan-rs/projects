@@ -17,20 +17,20 @@ const Form = ({ setLogin, setUser }) => {
     const [formPar, setFormPar] = useState('Need and account? Join now!')
     
     const history = useHistory()
-
+    // mounted is needed for localhost server, uncomment
     useEffect(() => {
-        let mounted = true
+        // let mounted = true
         getUsers().then(res => {
 
             setUsers(res.data)
         })
-        return () => mounted = false
+        // return () => mounted = false
     },[userName])
 
 
     const handleLogin = (e) =>{
         e.preventDefault() 
-        if(users.some(user => user.name.includes(userName) && user.password.includes(userPassword) && userName !== '' && userPassword !== '')){
+        if(users.some(user => user.name.includes(userName.toLocaleLowerCase()) && user.password.includes(userPassword) && userName !== '' && userPassword !== '')){
             setLogin(false)
             history.push('/')
             setUserName('')
@@ -45,10 +45,10 @@ const Form = ({ setLogin, setUser }) => {
     const handleSignUp = (e) => {
         e.preventDefault()
         let tmp = {
-            name: userName,
+            name: userName.toLocaleLowerCase(),
             password : userPassword
         }
-            if(users.some(user =>user.name.includes(userName) && userName !== '' && userPassword !== '')){
+            if(users.some(user =>user.name.includes(userName.toLocaleLowerCase()) && userName !== '' && userPassword !== '')){
                 setError('Error')
                 setFormType('Sign Up')
                 setTimeout(() => setError(''), 2000)
@@ -69,7 +69,7 @@ const Form = ({ setLogin, setUser }) => {
     }
     return (
         <StyledLogin>
-            <StyledForm onSubmit={(e) => { formType === 'Login' ? handleLogin(e) : handleSignUp(e)}}>
+            <StyledForm onSubmit={(e) => { formType === 'Login' ? handleLogin(e) : handleSignUp(e);  window.scrollTo(0, 0)}}>
                 <h2>{formType}</h2>
                 <InputText type="text" placeholder="User Name" onChange={(e) => setUserName(e.target.value) } value={userName} required/>
                 <InputPassword type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} value={userPassword} required/>

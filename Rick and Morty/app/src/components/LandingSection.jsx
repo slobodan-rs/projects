@@ -1,15 +1,30 @@
 import React from 'react'
 import styled from 'styled-components'
+import Loader from 'react-loader-spinner'
 
 import background from '../resources/images/landing-background.png'
 
 const LandingSection = () => {
     return (
+        <>
+        <StyledLoader type="Rings" color="#7EBABD" height={80} width={80} timeout={1000}/>
         <StyledLandingSection>
             <h1>All about your favorite show!</h1>
         </StyledLandingSection>
+        </>
     )
 }
+const StyledLoader = styled(Loader)`
+    padding-top: 15%;
+    text-align: center;
+    width: 100vw;
+    height: 100vh;
+    background-color:  #202223;
+
+    @media (max-width: 768px) {
+        height: 700px;
+    }
+`
 const StyledLandingSection = styled.section`
     width: 100%;
     height: 863px;

@@ -22,6 +22,7 @@ This website is dedicated to one of the most favorite tv shows of 21st. century
     - Axios
     - Fontawsome Icons
     - Json Server
+    - React Loader Spinner
 
 ## Installation
 
@@ -40,6 +41,7 @@ This website is dedicated to one of the most favorite tv shows of 21st. century
 - #### `npm install --save @fortawesome/react-fontawesome`
 - #### `npm install axios`
 - #### `npm install -g json-server`
+- #### `npm install react-loader-spinner --save`
     - JSON server needs to be installed globally, the default port is: [http://localhost:3005](http://localhost:3005)
     - If is necessary to change the port number the changes need to be added in `services.js` file
 
@@ -57,6 +59,7 @@ This website is dedicated to one of the most favorite tv shows of 21st. century
   You will also see any lint errors in the console.
 
     - Do the dummy sign up to see the content
+>Project can be found on [https://slobodan-rs.github.io/rick-and-morty](https://slobodan-rs.github.io/rick-and-morty)
 
 > This application is open-source, anyone can inspect, modify, and enhance the source code. Do what you want with it and spread love!
 
