@@ -7,8 +7,6 @@ Nice looking Budget Calculator with Income and Expense Categories, ability to re
 ## Technologies
 
     - React: 16.13.1
-    - Styled-components: ^5.2.0
-
 
 ## Dependencies
 
