@@ -5,19 +5,19 @@ const incomePar = document.querySelector('#sum-income')
 const expensesPar = document.querySelector('#sum-expenses')
 const subtractionPar = document.querySelector('#subtraction')
 
-const percentPar = document.createElement('p')
-percentPar.id = 'percent'
 
 const sumPrint = () =>{
     if(input.filter(el => el.status === 'Prihodi')){ 
-        incomePar.innerHTML = ` <p>Prihodi</p> 
-                                <p class="right">+ ${(Math.round(sumOfIncome * 100) / 100).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} </p>` 
+        incomePar.innerHTML = ` 
+            <p>Prihodi</p>
+            <p id="percent-none">${Math.round(percentage)}%</p>
+            <p id="right">+ ${(Math.round(sumOfIncome * 100) / 100).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} </p>` 
     }
     if(input.filter(el => el.status === 'Rashodi')){
-        expensesPar.innerHTML = `<p>Rashodi</p> 
-                                 <p class="right">- ${(Math.round(sumOfExprenses * 100) / 100).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} </p>`
-        percentPar.innerHTML = `${Math.round(percentage)}%`
-        expensesPar.append(percentPar)
+        expensesPar.innerHTML = `
+            <p>Rashodi</p>
+            <p id="percent">${Math.round(percentage)}%</p>
+            <p id="right">- ${(Math.round(sumOfExprenses * 100) / 100).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} </p>`
     }
     if(sub > 0){
         subtractionPar.innerHTML = `+${(Math.round(sub * 100) / 100).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`

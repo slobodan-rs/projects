@@ -15,7 +15,7 @@ body {
     font-size: 20px;
     color: rgb(255, 255, 255);
 }
-.subtraction p{
+#subtraction{
     height: 100px;
     font-size: 70px;
     color: white;
@@ -23,16 +23,26 @@ body {
 #sum-income {
     height: 10px;
     text-align: left;
-    padding: 20px 100px 30px 30px;
+    padding: 20px 20px 30px 30px;
     margin: 10px 35%;
     background-color: #2AB9B7;
+}
+#sum-income  p{
+    display: inline;
+}
+#right {
+    float: right;
+    margin-top: -20px;
 }
 #sum-expenses {
     height: 10px;
     text-align: left;
-    padding: 20px 100px 30px 30px;
+    padding: 20px 20px 30px 30px;
     margin:10px 35%;
     background-color: #FF4F4B;
+}
+#sum-expenses p {
+    display: inline;
 }
 #percent-block{
     position: relative;
@@ -46,11 +56,21 @@ body {
     color:white;
 }
 #percent {
+    float: right;
     background-color: #F57B66;
     padding: 5px;
     border-radius: 5px;
-    margin-left: 5px;
+    margin-left: 20px;
+    margin-top: -5px;
     color:white;
+}
+#percent-none {
+    float: right;
+    padding: 5px;
+    border-radius: 5px;
+    margin-left: 20px;
+    margin-top: -5px;
+    color: #2AB9B7;
 }
 .input {
     text-align: center;
