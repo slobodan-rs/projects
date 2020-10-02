@@ -1,66 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Slobodan Kocić</title>
 
-        <link rel="stylesheet" type="text/css" href="resources/css/index.css">
-        <link href="https://fonts.googleapis.com/css?family=Exo+2&display=swap" rel="stylesheet"> 
-        <link href="https://fonts.googleapis.com/css?family=Unica+One&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
-    </head>
-    <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slobodan Kocić</title>
 
-        <!------------Header------------->
-        <header>
-            <nav class="nav-bar">
+    <link rel="stylesheet" type="text/css" href="resources/css/index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Unica+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+</head>
+
+<body>
+    <div id="app">
+
+    <!------------Header------------->
+    <header>
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="#who">Who</a></li>
+                <li><a href="#work">Work</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <button id="back-to-top-hidden" type="submit"><i class="fas fa-angle-up fa-2x"></i></button>
+            </ul>
+        </nav>
+        <div class="main-header">
+            <h1>Geek Alert!</h1>
+        </div>
+    </header>
+
+    <!-----------Main-------------->
+    <main>
+        <section id="who">
+            <article class="section-left">
+                <h3>Slobodan Kocić</h3>
+                <h1>Coder<span style="font-size: 22px; color: black">and awkward dancer.</span></h1>
+                <p>A Front End Web Developer whose main focus is on writing clean, elegant and efficient code.
+                    <br>Tech and open-source enthusiast, curious by nature, aspired to work with innovative technologies and pursuit career in the digital world..</p>
+                <p class="second-paragraph">And no. You cannot see me dancing.</p>
                 <ul>
-                    <li><a href="#who">Who</a></li>
-                    <li><a href="#work">Work</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>  
-            </nav>
-            <div class="main-header">
-                <h1>Geek Alert!</h1>
-            </div>
-        </header>
-
-        <!-----------Main-------------->
-        <main>
-            <section id="who">
-                <article class="section-left">
-                    <h3>Slobodan Kocić</h3>
-                    <h1>Coder<span style="font-size: 22px; color: black">and awkward dancer.</span></h1>
-                    <p>A Front End Web Developer who focuses on writing clean, elegant and efficient code. Tech enthusiast, naturally curious, aspiring to do inovative things in    the digital world. </p>
-                    <p class ="second-paragraph">And no. You cannot see me dance.</p>
-                    <ul>
-                        <li><a href="mailto:mr.slobodan@hotmail.rs"><i class="fas fa-envelope fa-2x"></i></a></li>
-                        <li><a href="#"><i class="fab fa-twitter fa-2x"></i></a></li>
-                        <li><a href="https://www.linkedin.com/in/slobodan-kocic/" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a></li>
-                    </ul>
-                </article>
-                <article class="section-right">
-                    <img src="resources/images/laptop.gif" alt="laptop" width="500px">
-                </article>
-            </section>
-            <section id="work">
+                    <li><a href="mailto:mr.slobodan@hotmail.rs"><i class="fas fa-envelope fa-2x"></i></a></li>
+                    <li><a href="#"><i class="fab fa-twitter fa-2x"></i></a></li>
+                    <li><a href="https://www.linkedin.com/in/slobodan-kocic/" target="_blank"><i
+                                class="fab fa-linkedin fa-2x"></i></a></li>
+                </ul>
+            </article>
+            <article class="section-right">
+                <img src="resources/images/avatar.png" alt="laptop">
+            </article>
+        </section>
+        <section id="work">
+            <div class="recent-work-header">
                 <h1>Recent</h1>
                 <h1>Work</h1>
-                <button class="github-link" onclick="location.href='https://github.com/slobodan-rs/projects';" >GitHub Page</button>
-            </section>
-        </main>
+                <a href="https://github.com/slobodan-rs/projects" class="github-link" target=_blank>GitHub Page</a>
+            </div>
+            <div class="recent-work">
+                <div class="project">
+                    <a id="brand-care-distribution">Brand Care Distribution</a>
+                    <!-- <button  type="submit" id="brand-care-distribution">Brand Care Distribution</button> -->
+                </div>
+                <div class="project">
+                    <a id="spacex">SpaceX</a>
+                </div>
+                <div class="project">
+                    <a id="temperature-control">Temperature Control</a>
+                </div>
+            </div>
+            <div class="recent-work">
+                <div class="project">
+                    <a id="beomaster">Beomaster Nekretnine</a>
+                </div>
+                <div class="project">
+                    <a id="rick-and-morty">Rick and Morty</a>
+                </div>
+                <div class="project">
+                    <a id="makibo-group">Makibo Group</a>
+                </div>
+            </div>
+        </section>
+    </main>
 
-        <!----------Footer------------->
-        <footer id="contact">
-            <h1>Hire Me</h1>
-            <p>I am currently taking on new projects. Would you like to discuss yours?</p>
-            <p>mr.slobodan@hotmail.rs</p>
-            <ul>
-                <li><a href="mailto:mrslobodan@hotmail.rs"><i class="fas fa-envelope fa-3x"></i></a></li>
-                <li><a href="#"><i class="fab fa-twitter fa-3x"></i></a></li>
-                <li><a href="https://www.linkedin.com/in/slobodan-kocic/" target="_blank"><i class="fab fa-linkedin fa-3x"></i></a></li>
-            </ul>     
-        </footer>
-    </body>
+    <!----------Footer------------->
+    <footer id="contact">
+        <h1>Hire Me</h1>
+        <p>I am currently taking on new projects. Would you like to discuss yours?</p>
+        <p>mr.slobodan@hotmail.rs</p>
+        <ul>
+            <li><a href="mailto:mrslobodan@hotmail.rs"><i class="fas fa-envelope fa-3x"></i></a></li>
+            <li><a href="#"><i class="fab fa-twitter fa-3x"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/slobodan-kocic/" target="_blank"><i
+                        class="fab fa-linkedin fa-3x"></i></a></li>
+        </ul>
+    </footer>
+    <script src="resources/src/backToTop.js"></script>
+    <script src="resources/src/brandCare.js"></script>
+    <script src="resources/src/makiboGroup.js"></script>
+    <script src="resources/src/beomaster.js"></script>
+    <script src="resources/src/rickAndMory.js"></script>
+    <script src="resources/src/spaceX.js"></script>
+    <script src="resources/src/temperatureControl.js"></script>
+
+    </div>
+</body>
+
 </html>
