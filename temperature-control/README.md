@@ -24,6 +24,4 @@ Increases and decreases temperature on click
 
 - #### `npm-install`
 
-- #### `npm install --save styled-components`
-
   - Alternatively you can use `npm install -g npm-install-missing` & `npm-install-missing` to install dependencies

@@ -30,7 +30,9 @@ This website is dedicated to one of the most favorite tv shows of 21st. century
 
 - #### `npm-install`
 
-  - Alternatively you can use `npm install -g npm-install-missing` & `npm-install-missing` to save yourself the hassle of installing manually other dependencies
+  - Alternatively you can use `npm install -g npm-install-missing` & `npm-install-missing` to save yourself the hassle of installing manually other dependencies that are missing
+
+  Manual installation if something is not working properly
 
 - #### `npm install --save styled-components`
 - #### `npm install --save react-router-dom`

@@ -20,4 +20,4 @@ With this app you can search all launches from a SpaceX company, you can search 
 - Download NodeJS to install NPM, use the folowing instructions: [https://www.npmjs.com/get-npm](https://www.npmjs.com/get-npm)
 
 - #### `npm-install`
-- #### `npm install axios`
+    - Alternatively you can use `npm install -g npm-install-missing` & `npm-install-missing` to install dependencies
