@@ -1,12 +1,15 @@
 # Projects
+
 HTML/CSS/JS/REACT
 
---------------------------------
-###   Rick And Morty
+---
+
+### Rick And Morty
+
      -React
-    
+
         Dependencies:
-         - NPM 
+         - NPM
          - React
          - Styled Components
          - React Router Dom
@@ -15,31 +18,30 @@ HTML/CSS/JS/REACT
          - Fontawsome Icons
          - Json Server
 
---------------------------------
-###   Temperature Control App
+---
+
+### Temperature Control App
+
      -React
-    
+
         Dependencies:
-         - NPM 
+         - NPM
          - React
          - Styled Components
 
---------------------------------
-###   Portfolio Website
+---
+
+### Portfolio Website
+
      -HTML/CSS
-    
+
         Dependencies:
         -None
-    
---------------------------------
-###   Budget Calculator
-     -JavaSript DOM
-    
-        Dependencies:
-        -NPM
-    
--------------------------------- 
-###  SpaceX Search
+
+---
+
+### SpaceX Search
+
      -JavaSript DOM
      -AXIOS
      -API
@@ -47,10 +49,42 @@ HTML/CSS/JS/REACT
         Dependencies:
         -NPM
         -AXIOS
---------------------------------
-###   Budget Calculator React
+
+---
+
+### Budget Calculator
+
+     -JavaSript DOM
+
+        Dependencies:
+        -NPM
+
+---
+
+### Budget Calculator React
+
      -React Hooks
-    
+
         Dependencies:
         -NPM
         -UUID
+
+---
+
+### Simple Calculator React
+
+     -React Hooks
+
+        Dependencies:
+        - NPM
+        - React
+        - Styled Components
+
+---
+
+### Finance Logger TypeScript
+
+     -TypeScript OOP
+
+        Dependencies:
+        - None
