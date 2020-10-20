@@ -2,7 +2,7 @@
 
 OOP based TypeScript project(Modules)
 
-[!finance img](https://github.com/slobodan-rs/projects/blob/master/Finance-Logger-TypeScript/finance-logger.png?raw=true)
+![finance img](https://github.com/slobodan-rs/projects/blob/master/Finance-Logger-TypeScript/finance-logger.png?raw=true)
 
 ## Technologies
 
