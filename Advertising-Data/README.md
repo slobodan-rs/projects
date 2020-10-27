@@ -7,7 +7,7 @@ Marketing Analytics app that shows ETL of:
     -Google Analytics
     -Mailchimp
 
-![tmp control img](https://github.com/slobodan-rs/projects/blob/master/Advertising-Data/ad.png?raw=true)
+![AD img](https://github.com/slobodan-rs/projects/blob/master/Advertising-Data/ad.png?raw=true)
 
 ## Technologies
 
