@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
+import background from '../images/background.jpg'
 
 export const GlobalStyle = createGlobalStyle`
     html {
@@ -14,5 +15,6 @@ export const GlobalStyle = createGlobalStyle`
         padding: 0;
         overflow: hidden;
         overflow-y: scroll;
+        background-image: url(${background});
     }
 `
