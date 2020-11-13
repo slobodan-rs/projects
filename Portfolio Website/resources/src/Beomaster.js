@@ -1,10 +1,7 @@
-const projectBeomaster = document.querySelector('#app')
-const projectBeomasterButton = document.querySelector('#beomaster')
-
-
-projectBeomasterButton.addEventListener('click', () => {
-    projectBeomaster.innerHTML = `
-    <nav class="project-nav">
+const Beomaster = {
+    render: () => {
+        return `
+        <nav class="project-nav">
             <a href="./index.html">BACK TO PROJECTS</i></a>
         </nav>
         <div class="discription">
@@ -16,5 +13,7 @@ projectBeomasterButton.addEventListener('click', () => {
         <div class="img-container">
             <img src="./resources/images/beomaster.png" width="50%"/>
         </div>
-    `
-})
+        `
+    }
+}
+export default Beomaster
